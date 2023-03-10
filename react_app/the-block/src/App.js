@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import React, {Component} from "react";
+import Header from './components/header/header';
+import ChatHistory from "./components/chat_history/chat_history";
+import ChatInput from "./components/chat_input/chat_input";
 import './App.css';
+import {connect, sendMsg} from './api';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      ChatHistory: []
+    }
+  }
+
+  componentDidMount() {
+    connect((msg) => {
+      console.log("New Message")
+      this.setState(prevState => ({
+        chatHistory : [...prevState.chatHistory, msg]
+      }))
+      console.log(this.state);
+    })
+  }
+
+  render() {
+    return(
+      <div className="App">
+        <Header/>
+        <ChatHistory chatHistory={this.state.chatHistory}/>
+        <ChatInput send={this.send}/>
+      </div>
+    )
+  }
 }
 
 export default App;
