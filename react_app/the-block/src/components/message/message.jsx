@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import './message.scss';
+import './message.css';
 
-class Message extends Conponent{
+class Message extends Component{
     constructor(props){
         super(props);
         let temp= JSON.parse(this.props.message);
