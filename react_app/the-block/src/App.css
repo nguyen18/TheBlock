@@ -1,27 +1,72 @@
-/* .App {
+/* #AspectWrapper {
+  border: 1px solid blue;
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
+  position: relative;
+}
+.AspectWrapper::after {
+  border: 1px solid blue;
+  padding-top: 56.25%; // percentage of containing block _width_
+  display: block;
+  content: '';
+} */
+
+#Content {
+  position: absolute;
+  top: 0; bottom: 0; right: 0; left: 0;
+  display: block;
+  margin: auto;
+}
+
+#LandingLogo {
+  width: 500px;
+}
+
+#EnterButton {
+  background-color: #4b4d6a;
+  color: white;
+  position: absolute;
+  box-shadow: -6px 6px 2px #1f1e31;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  height: 50px;
+  width:100px;
+  cursor: pointer;
+}
+
+#EnterButton:active {
+  background-color: #4b4d6a;
+  box-shadow: 0 5px #1f1e31;
+  transform: translateY(4px);
+  outline: none;
+}
+
+/** .App {
   color: white;
   border: 1px solid #2331B5;
   width: 300px;
   height: 300px;
-} */
+}
 .AspectWrapper {
   border: 1px solid #2331B5;
   display: inline-block; /* shrink to fit */
-  width: 99%;           /* whatever width you like */
-  position: relative;    /* so .content can use position: absolute */
-}
+ /* width: 99%;           /* whatever width you like */
+ /* position: relative;    /* so .content can use position: absolute */
+/*}
 .AspectWrapper::after {
   border: 1px solid #2331B5;
   padding-top: 56.25%; /* percentage of containing block _width_ */
-  display: block;
+ /* display: block;
   content: '';
 }
 .Content {
   position: absolute;
   top: 0; bottom: 0; right: 0; left: 0;  /* follow the parent's edges */
-}
+/*}
 
-/* .App-logo {
+.App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -30,9 +75,9 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-} */
+}
 
-/* .App-header {
+.App-header {
   border-color: #2331B5;
   min-height: 100vh;
   display: flex;
@@ -45,9 +90,9 @@
 
 .App-link {
   color: #61dafb;
-} */
+}
 
-/* @keyframes App-logo-spin {
+@keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
