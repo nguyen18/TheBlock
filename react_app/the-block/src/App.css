@@ -6,24 +6,33 @@
   position: relative;
 }
 */
+
+
 .AspectWrapper {
-  border: 1px solid blue;
-  width:100%;
-  height:auto;
+  border: 1px solid #1763a4;
+  min-width:90%;
+  height:90%;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 1000px;
 } 
 
 
 .container {
   display:grid;
-  border: 2px solid white;
+  /* border: 2px solid white; */
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 50%;
+  top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50vw;
-  height: 80vh;
+  width: 50%;
+  height:-25;
+  padding: auto;
+  min-height: 500px !important;
 }
 
 .Content {
@@ -33,11 +42,10 @@
 }
 
 #Welcome {
-  margin: 10px;
   color: #fab568;
   font-size: 3vw;
   font-weight: bold;
-  padding-bottom: 1vh;
+  padding-bottom: 5px;
 }
 
 .aligned {
@@ -69,8 +77,8 @@
   z-index: 1;
   font-size: 3vw;
   font-weight: bold;
-  margin-top: 1vh ;
   box-shadow: -20px 20px #1f1e31;
+  margin-top: 20px;
 }
 
 #EnterButton:active {
@@ -90,7 +98,7 @@
   top: 0;
   left: 0;
   font-size: 6vw;
-  text-shadow: -50px 50px #2331b5;
+  text-shadow: -40px 30px #2331b5;
   font-weight: bold;
 }
 
@@ -99,7 +107,7 @@
   bottom: 0;
   right: 0;
   font-size: 6vw;
-  text-shadow: -50px 50px #2331b5;
+  text-shadow: -40px 30px #2331b5;
   color: white;
   font-weight: bold;
 

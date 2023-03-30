@@ -1,4 +1,3 @@
-html, body {
-    min-width: 500px;
-    min-height: 500px;
-  }
+body {
+  min-height: 600px; /* set the minimum height of the body element */
+}
