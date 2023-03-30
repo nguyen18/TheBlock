@@ -21,14 +21,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid black;
-  padding: 20px;
-
 }
 
 .Content {
-  border: 2px solid white;
   font-family: monospace;
+
 
 }
 
@@ -37,6 +34,7 @@
   color: #fab568;
   font-size: 100px;
   font-weight: bold;
+  padding-bottom: 10%;
 }
 
 .aligned {
@@ -47,7 +45,7 @@
 
 #LandingLogo {
   margin: 10px;
-  border: 2px solid white;
+  /* border: 2px solid white; */
   box-sizing: border-box;
 }
 
@@ -57,16 +55,18 @@
   box-shadow: -6px 6px 2px #1f1e31;
   margin: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   text-decoration: none;
-  height: 150px;
-  width: 300px;
+  height: 190px;
+  width: 700px;
   cursor: pointer;
   top: 0;
   left: 0;
   z-index: 1;
   font-size: 100px;
   font-weight: bold;
+  margin-top: 10% ;
+  box-shadow: -20px 20px #1f1e31;
 }
 
 #EnterButton:active {
@@ -74,6 +74,33 @@
   box-shadow: 0 5px #1f1e31;
   transform: translateY(4px);
   outline: none;
+}
+
+.blocktext {
+  position: relative;
+}
+
+#top-left {
+  position: absolute;
+  color: white;
+  top: 0;
+  left: 0;
+  font-size: 300px;
+  text-shadow: -50px 50px #2331b5;
+  font-weight: bold;
+}
+
+#bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 300px;
+  text-shadow: -50px 50px #2331b5;
+  color: white;
+  font-weight: bold;
+
+
+
 }
 
 /** .App {
