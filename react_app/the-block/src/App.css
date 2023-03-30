@@ -9,7 +9,7 @@
 
 
 .AspectWrapper {
-  border: 5px solid #1763a4;
+  border: 20px solid #262d7b;
   min-width:90%;
   height:90%;
   position: absolute;
@@ -33,13 +33,12 @@
   height:-25;
   padding: auto;
   min-height: 500px !important;
-}
-
-.Content {
-  font-family: monospace;
-
+  font-family:sans-serif;
 
 }
+/* .Content {
+
+} */
 
 #Welcome {
   color: #fab568;
@@ -68,14 +67,13 @@
   margin: 10px;
   border: none;
   border-radius: 50px;
-  text-decoration: none;
-  height: 6vh;
+  height: 5vh;
   width: 15vw;
   cursor: pointer;
   top: 0;
   left: 0;
   z-index: 1;
-  font-size: 3vw;
+  font-size: 3vh;
   font-weight: bold;
   box-shadow: -20px 20px #1f1e31;
   margin-top: 20px;
