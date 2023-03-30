@@ -9,7 +9,7 @@
 
 
 .AspectWrapper {
-  border: 1px solid #1763a4;
+  border: 5px solid #1763a4;
   min-width:90%;
   height:90%;
   position: absolute;
@@ -70,7 +70,7 @@
   border-radius: 50px;
   text-decoration: none;
   height: 6vh;
-  width: 18vw;
+  width: 15vw;
   cursor: pointer;
   top: 0;
   left: 0;
