@@ -3,7 +3,7 @@ import logo from './images/placeholder.png';
 
 function App() {
   return (
-    //<div className='AspectWrapper'>
+    <div class='AspectWrapper'>
       <div class='Content'>
         <div class="container">
           <div class='aligned'>
@@ -21,7 +21,7 @@ function App() {
           </div>
         </div>
       </div>
-    //</div>
+    </div>
 
     // <div className='AspectWrapper'>
     //   <div className='Content'>
