@@ -4,12 +4,20 @@ import logo from './images/placeholder.png';
 function App() {
   return (
     //<div className='AspectWrapper'>
-      <div className='Content'>
-        <h1 id='Welcome'>WELCOME TO</h1>
+      <div class='Content'>
         <h1 id='The'>THE</h1>
-        <img id='LandingLogo' src={logo} alt='the block landing logo'></img>
         <h1 id="Block">BLOCK</h1>
-        <EnterButton name="Enter"></EnterButton>
+        <div class="container">
+          <div class='aligned'>
+            <h1 id='Welcome'>WELCOME TO</h1>
+          </div>
+          <div class='aligned'>
+            <img id='LandingLogo' src={logo} alt='the block landing logo'></img>
+          </div>
+          <div class = 'aligned'>
+            <EnterButton name="Enter"></EnterButton>
+          </div>
+        </div>
       </div>
     //</div>
 

@@ -12,28 +12,61 @@
   content: '';
 } */
 
-#Content {
+.container {
+  display:grid;
+  border: 2px solid white;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  top: 0; bottom: 0; right: 0; left: 0;
-  display: block;
-  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  padding: 20px;
+
 }
 
+.Content {
+  border: 2px solid white;
+  font-family: monospace;
+
+}
+
+#Welcome {
+  margin: 10px;
+  color: #fab568;
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.aligned {
+  align-self: center;
+  margin: 0 auto;
+}
+
+
 #LandingLogo {
-  width: 500px;
+  margin: 10px;
+  border: 2px solid white;
+  box-sizing: border-box;
 }
 
 #EnterButton {
   background-color: #4b4d6a;
   color: white;
-  position: absolute;
   box-shadow: -6px 6px 2px #1f1e31;
+  margin: 10px;
   border: none;
   border-radius: 5px;
   text-decoration: none;
-  height: 50px;
-  width:100px;
+  height: 150px;
+  width: 300px;
   cursor: pointer;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  font-size: 100px;
+  font-weight: bold;
 }
 
 #EnterButton:active {
