@@ -6,17 +6,16 @@ import Navbar from './components/navbar/navbar';
 import { BrowserRouter as Router, Routes, Route }
     from 'react-router-dom';
 import Home from './pages/index';
+import { Wrapper } from './components/wrapper';
 
 function App() {
     return (
         <Router>
             <Navbar />
             <Routes>
-                <Route exact path='/' exact element={<Home />} />
+                <Route exact path='/' element={<Home />} />
             </Routes>
         </Router>
-
-        //<Spline scene="https://prod.spline.design/FNtEG2IT78qP98ex/scene.splinecode" />
     )
 }
 
