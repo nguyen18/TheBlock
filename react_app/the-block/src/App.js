@@ -1,57 +1,23 @@
-import './App.css';
-import logo from './images/placeholder.png';
+import React from 'react';
+import './css/app.css'
+import Spline from '@splinetool/react-spline';
+import styled from 'styled-components';
+import Navbar from './components/navbar/navbar';
+import { BrowserRouter as Router, Routes, Route }
+    from 'react-router-dom';
+import Home from './pages';
 
 function App() {
-  return (
-    <div class='AspectWrapper'>
-      <div class='Content'>
-        <div class="container">
-          <div class='aligned'>
-            <h1 id='Welcome'>WELCOME TO</h1>
-          </div>
-          <div class="blocktext">
-            <div class='aligned'>
-              <img id='LandingLogo' src={logo} alt='the block landing logo'></img>
-            </div>
-            <h1 id='top-left'>THE</h1>
-            <h1 id="bottom-right">BLOCK</h1>
-          </div>
-          <div class = 'aligned'>
-            <EnterButton name="Enter"></EnterButton>
-          </div>
-        </div>
-      </div>
-    </div>
+    return (
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route exact path='/' exact element={<Home />} />
+            </Routes>
+        </Router>
 
-    // <div className='AspectWrapper'>
-    //   <div className='Content'>
-    //     <p>testing</p>
-    //   </div>
-    // </div>
-      // <header className="App-header">
-      //   <img src={logo} className="App-logo" alt="logo" />
-      //   <p>
-      //     Edit <code>src/App.js</code> and save to reload.
-      //   </p>
-      //   <a
-      //     className="App-link"
-      //     href="https://reactjs.org"
-      //     target="_blank"
-      //     rel="noopener noreferrer"
-      //   >
-      //     Learn React
-      //   </a>
-      // </header>
-  );
-}
-
-
-const EnterButton = (props) => {
-  return (
-    <button type="button" id="EnterButton" href={props.link} target={props.target}>
-      {props.name}
-    </button>
-  );
+        //<Spline scene="https://prod.spline.design/FNtEG2IT78qP98ex/scene.splinecode" />
+    )
 }
 
 export default App;
