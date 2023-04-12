@@ -46,8 +46,9 @@ export const Logo = styled.div`
   margin-left: 2%;
   height: 85px;
   font-family: "SemiBold";
+  color: black;
   @media screen and (max-width: 768px) {
-    margin-left: 10%;
+    margin-left: 8%;
   }
 `
 export const NavMenu = styled.div`
