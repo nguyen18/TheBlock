@@ -1,6 +1,7 @@
 import { FaBars } from "react-icons/fa";
 import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
+import "../../css/fonts.css"
   
 export const Nav = styled.nav`
   background: transparent;
@@ -42,19 +43,20 @@ export const Logo = styled.div`
   display: flex;
   align-items: center;
   float: left;
+  margin-left: 2%;
   height: 85px;
+  font-family: "SemiBold";
+  @media screen and (max-width: 768px) {
+    margin-left: 10%;
+  }
 `
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-right: -24px;
+  margin-right: 2%;
   float: right;
-  /* Second Nav */
-  /* margin-right: 24px; */
-  /* Third Nav */
-  /* width: 100vw;
-white-space: nowrap; */
+  font-family: "Medium";
   @media screen and (max-width: 768px) {
-    display: none;
+
   }
 `;

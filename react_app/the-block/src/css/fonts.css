@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "Regular";
+    src: local("SplineSans-Regular"), url("../assets/fonts/Spline_Sans/static/SplineSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Light";
+    src: local("SplineSans-Light"), url("../assets/fonts/Spline_Sans/static/SplineSans-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: local("SplineSans-Bold"), url("../assets/fonts/Spline_Sans/static/SplineSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Medium";
+    src: local("SplineSans-Medium"), url("../assets/fonts/Spline_Sans/static/SplineSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "SemiBold";
+    src: local("SplineSans-SemiBold"), url("../assets/fonts/Spline_Sans/static/SplineSans-SemiBold.ttf") format("truetype");
+}
