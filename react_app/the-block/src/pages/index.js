@@ -11,10 +11,7 @@ const Home = () => {
       <Content>
         <h1>Collaborate with people</h1>
         <p>
-          Bring your team together and build your community by using our
-          cross-platform app that lets you collaborate via chat, voice and by
-          sharing and storing unlimited media files. A world of topics is
-          waiting for you. Join the private beta.
+        imagine a world where it was easy to make friends. a place where you can meet people––not curated profiles.
         </p>
       </Content>
     </Wrapper>

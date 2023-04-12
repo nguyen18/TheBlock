@@ -1,26 +1,24 @@
 import React from "react";
-import { Nav, NavLink, NavMenu }
+import { Logo, Nav, NavLink, NavMenu }
     from "./NavbarElements";
 
 const Navbar = () => {
     return (
         <>
             <Nav>
+                <Logo><p>THE BLOCK</p></Logo>
                 <NavMenu>
                     <NavLink to="/" activeStyle>
-                        Home
+                        home
                     </NavLink>
                     <NavLink to="/about" activeStyle>
-                        About
+                        about
                     </NavLink>
                     <NavLink to="/contact" activeStyle>
-                        Contact Us
+                        team
                     </NavLink>
                     <NavLink to="/blogs" activeStyle>
-                        Blogs
-                    </NavLink>
-                    <NavLink to="/sign-up" activeStyle>
-                        Sign Up
+                        tech stack
                     </NavLink>
                 </NavMenu>
             </Nav>
