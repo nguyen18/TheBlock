@@ -12,7 +12,7 @@ const Home = () => {
         <Navbar></Navbar>
       <Content>
         <h1 id='WelcomeText'>
-        imagine a world where it was easy to make friends. a place 
+        imagine a world where it was easy to make human connections. a place 
         where you can meet people––not curated profiles.        </h1>
       </Content>
     </Wrapper>
