@@ -1,5 +1,5 @@
 import React from 'react';
-import './pages/css/app.css'
+import './app.css'
 import { Routepusher } from './pages/routes';
 
 function App() {
