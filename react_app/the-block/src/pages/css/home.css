@@ -1,4 +1,11 @@
 #WelcomeText {
     text-align: center;
     font-family: sans-serif;
+    margin-top: 13%;
+}
+
+#EnterButton {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
 }

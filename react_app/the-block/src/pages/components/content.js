@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Content = styled.div`
     color: black;
-    display: flex;
+    display: grid;
     margin-left: 10%;
     margin-right: 10%;
     z-index: 12;
