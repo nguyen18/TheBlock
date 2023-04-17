@@ -6,7 +6,7 @@ import './css/login.css'
 
 const LoginPage = () => {
     return (
-      <Wrapper>
+      <Wrapper id="body">
         <Content>
             <a href="/">home</a>
             <div id="LoginForm">

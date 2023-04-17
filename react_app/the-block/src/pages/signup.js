@@ -6,7 +6,7 @@ import './css/signup.css'
 
 const SignupPage = () => {
     return (
-      <Wrapper>
+      <Wrapper id="body">
         <Content>
         <a href="/">home</a>
             <div id="SignupForm">
