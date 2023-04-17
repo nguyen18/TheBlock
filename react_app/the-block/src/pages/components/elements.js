@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import '../../assets/fonts/FontFaces.css'
-import React, { useState } from 'react';
-import { ReactComponent as Clear } from '../../assets/images/svg/clear.svg';
 
 /* Buttons */
 
@@ -25,3 +23,26 @@ export const Butt = styled.button`
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
         transform: translateY(-3px);
 `;
+
+export const Form_container = styled.div`
+    text-align: center;
+    font-size: 130%;
+    border: solid 1px;
+    border-radius: 5px;
+    width: 60%;
+    padding-top: 15px;
+    padding-bottom: 40px;
+`
+
+export const Input = styled.input`
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    width: 70%;
+`
+export const Divider = styled.hr`
+    border-top: 1px solid #bbb;
+    border-radius: 5px;
+    width: 90%;
+    margin-bottom: 30px;
+`
