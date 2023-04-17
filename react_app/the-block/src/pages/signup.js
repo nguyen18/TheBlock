@@ -8,7 +8,7 @@ const SignupPage = () => {
     return (
       <Wrapper>
         <Content>
-        <a href="/">back</a>
+        <a href="/">home</a>
             <div id="SignupForm">
                 <SignupForm></SignupForm>
             </div>

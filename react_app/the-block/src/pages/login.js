@@ -8,7 +8,7 @@ const LoginPage = () => {
     return (
       <Wrapper>
         <Content>
-            <a href="/">back</a>
+            <a href="/">home</a>
             <div id="LoginForm">
                 <LoginForm></LoginForm>
             </div>
