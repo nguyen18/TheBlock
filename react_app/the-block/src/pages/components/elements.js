@@ -1,16 +1,19 @@
 import styled from "styled-components";
 import '../../assets/fonts/FontFaces.css'
+import React, { useState } from 'react';
+import { ReactComponent as Clear } from '../../assets/images/svg/clear.svg';
+
+/* Buttons */
 
 export const Butt = styled.button`
+    text-decoration: none;
     font-family: "SemiBold";
     font-size: 16px;
     border: 0px;
-    padding: 0 2% 0 2%;
+    padding: 1.5% 5% 1.5% 5%;
     border-radius: 14px;
     color: #20321D;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    height: 40px;
-    width: 25%;
     background: #A2C795;
 
     transition: .5s;

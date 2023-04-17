@@ -20,8 +20,12 @@ export const NavLink = styled(Link)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+  
+  :hover{
+    text-decoration: underline;
+  }
   &.active {
-    color: #4d4dff;
+    color: #7BB666/*#4d4dff*/;
   }
 `;
   

@@ -5,6 +5,8 @@ import AboutPage from './about';
 import Home from './home';
 import TeamPage from './team';
 import TechStackPage from './tech_stack';
+import LoginPage from './login';
+import SignupPage from './signup';
 
 export const Routepusher = () => {
     return (
@@ -14,6 +16,8 @@ export const Routepusher = () => {
                 <Route path='/about' element={<AboutPage />} />
                 <Route path='/team' element={<TeamPage />} />
                 <Route path='/techstack' element={<TechStackPage />} />
+                <Route path='/login' element={<LoginPage />} />
+                <Route path='/signup' element={<SignupPage />} />
             </Routes>
         </Router>
     )
