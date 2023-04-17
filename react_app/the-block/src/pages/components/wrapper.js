@@ -7,7 +7,6 @@ export const Wrapper = styled.div`
   font-size: 16px;
   margin: 0 auto;
   position: relative;
-  height: 100%;
-  overflow-x: hidden;
+  height: 100vh;
   }
 `;

@@ -24,25 +24,36 @@ export const Butt = styled.button`
         transform: translateY(-3px);
 `;
 
-export const Form_container = styled.div`
+/* elements for login and signup pages */
+
+export const Auth_Form_container = styled.div`
     text-align: center;
     font-size: 130%;
-    border: solid 1px;
-    border-radius: 5px;
+    border-radius: 20px;
     width: 60%;
     padding-top: 15px;
     padding-bottom: 40px;
+    background-color: #4B4D6A;
+    color: white;
+    font-family: "Bold";
+    box-shadow: -12px 10px 0px 0px rgba(0, 0, 0, .25);
 `
 
-export const Input = styled.input`
-    padding: 10px;
+export const Auth_Input = styled.input`
+    font-family: "Regular";
+    padding: 12px;
     margin-bottom: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
+    border: none;
     width: 70%;
+    background-color: #28283C;
+    color: white;
+    text-align: center;
 `
 export const Divider = styled.hr`
-    border-top: 1px solid #bbb;
+    border-top: 0.5px solid #bbb;
     border-radius: 5px;
     width: 90%;
     margin-bottom: 30px;
+    border-color: #8D90B5;
 `

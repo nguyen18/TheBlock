@@ -2,5 +2,14 @@
     margin-top: 10px;
     font-size: 16px;
     margin-bottom: 20px;
+    background-color: #5765F2;
+    color: white;
+    border: none;
+}
+
+#SignupButton {
+    background-color: #5765F2;
+    color: white;
+    border: none;
 }
 
