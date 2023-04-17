@@ -20,7 +20,7 @@ export const NavLink = styled(Link)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-  
+
   :hover{
     text-decoration: underline;
   }
@@ -55,6 +55,15 @@ export const Logo = styled.div`
     margin-left: 8%;
   }
 `
+export const LogoText = styled.a`
+  text-decoration: none;
+  color: black;
+
+  :hover {
+    color: #7BB666/*#4d4dff*/;
+  }
+`
+
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;

@@ -12,7 +12,6 @@ const SignupPage = () => {
             <div id="SignupForm">
                 <SignupForm></SignupForm>
             </div>
-            
         </Content>
       </Wrapper>
     );
