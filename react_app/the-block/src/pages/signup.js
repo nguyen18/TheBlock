@@ -1,16 +1,16 @@
 import React from "react";
 import { Wrapper } from './components/wrapper';
 import { Content } from './components/content';
-import LoginForm from "./components/login_form";
-import './css/login.css'
+import SignupForm from "./components/signup_form";
+import './css/signup.css'
 
-const LoginPage = () => {
+const SignupPage = () => {
     return (
       <Wrapper>
         <Content>
-            <a href="/">back</a>
-            <div id="LoginForm">
-                <LoginForm></LoginForm>
+        <a href="/">back</a>
+            <div id="SignupForm">
+                <SignupForm></SignupForm>
             </div>
             
         </Content>
@@ -18,4 +18,4 @@ const LoginPage = () => {
     );
   };
     
-  export default LoginPage;
+  export default SignupPage;

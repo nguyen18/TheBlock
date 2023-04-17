@@ -1,5 +1,9 @@
 import styled from "styled-components";
 import '../../assets/fonts/FontFaces.css'
+import React, { useState } from 'react';
+import { ReactComponent as Clear } from '../../assets/images/svg/clear.svg';
+
+/* Buttons */
 
 export const Butt = styled.button`
     text-decoration: none;
