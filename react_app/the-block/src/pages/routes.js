@@ -7,6 +7,7 @@ import TeamPage from './team';
 import TechStackPage from './tech_stack';
 import LoginPage from './login';
 import SignupPage from './signup';
+import DashboardPage from './dashboard';
 
 export const Routepusher = () => {
     return (
@@ -18,6 +19,7 @@ export const Routepusher = () => {
                 <Route path='/techstack' element={<TechStackPage />} />
                 <Route path='/login' element={<LoginPage />} />
                 <Route path='/signup' element={<SignupPage />} />
+                <Route path='/dashboard' element={<DashboardPage />} />
             </Routes>
         </Router>
     )
