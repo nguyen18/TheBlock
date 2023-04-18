@@ -28,27 +28,29 @@ export const Butt = styled.button`
 
 export const Auth_Form_container = styled.div`
     text-align: center;
-    font-size: 130%;
+    font-size: 140%;
     border-radius: 20px;
     width: 60%;
     padding-top: 15px;
     padding-bottom: 40px;
-    background-color: #4B4D6A;
-    color: white;
-    font-family: "Bold";
+    background-color: white;
+    color: black;
+    font-family: "Semibold";
     box-shadow: -12px 10px 0px 0px rgba(0, 0, 0, .25);
 `
 
 export const Auth_Input = styled.input`
-    font-family: "Regular";
+    font-family: "Semibold";
+    font-size: 15px;
     padding: 12px;
     margin-bottom: 20px;
     border-radius: 10px;
     border: none;
     width: 70%;
-    background-color: #28283C;
-    color: white;
+    background-color: #A2C795;
+    color: 1px solid rgba(32,50,29, 0.8);
     text-align: center;
+
 `
 export const Divider = styled.hr`
     border-top: 0.5px solid #bbb;

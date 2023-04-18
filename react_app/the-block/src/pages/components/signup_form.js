@@ -9,7 +9,7 @@ const SignupForm = () => {
             <p id="SignupTitle">SIGN-UP</p>
             <form>
                 <div>
-                    <Auth_Input type="text" name="uname" placeholder="enter username..." required />
+                    <Auth_Input type="text" name="email" placeholder="enter email..." required />
                 </div>
                 <div className="input-container">
                     <Auth_Input type="password" name="pass" placeholder="enter password..." required />
@@ -26,5 +26,6 @@ const SignupForm = () => {
         </Auth_Form_container>
     );
 };
+
 
 export default SignupForm;

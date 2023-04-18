@@ -1,0 +1,1 @@
+for writing migrations download golang-migrate
