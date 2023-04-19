@@ -10,6 +10,7 @@
 MIGRATIONS_PATH=./brain/src/db/migrations
 POSTGRES_PORT=5432
 
+REACT_PATH=./react_app/the-block
 REACT_PORT=3000
 REACT_PID=$(lsof -ti :$(REACT_PORT))
 
@@ -41,7 +42,7 @@ migrate-down:
 	migrate -path $(MIGRATIONS_PATH) -database "postgresql://$(TESTDB_USER):$(TESTDB_PASS)@$(TESTDB_HOST):$(POSTGRES_PORT)/$(TESTDB_NAME)?sslmode=disable" -verbose down
 
 run-react:
-	$(shell cd ./react_app/the-block && npm start)
+	$(shell cd $(REACT_PATH) && npm start)
 
 stop-react:
-	$(shell cd ./react_app/the-block && lsof -ti :$(REACT_PORT) | xargs kill)
+	$(shell cd $(REACT_PATH) && lsof -ti :$(REACT_PORT) | xargs kill)
