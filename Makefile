@@ -7,7 +7,7 @@
 #
 
 ### VARIABLES
-MIGRATIONS_PATH=brain/src/db/migrations
+MIGRATIONS_PATH=./brain/src/db/migrations
 POSTGRES_PORT=5432
 
 REACT_PORT=3000
