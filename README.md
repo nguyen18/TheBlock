@@ -12,6 +12,11 @@ make start
 ```
 This will start react and golang servers and also run migrations on a docker database container.
 
+To stop, please run:
+```
+make clean
+```
+
 ## Needed Dependencies
 Please ensure you have the following installed before starting local development:
 
