@@ -2,14 +2,20 @@
 Before running migrations make sure you have golang-migrate installed:
 
 ### MAC OS
-```brew install golang-migrate```
+```
+brew install golang-migrate
+```
 
 ## Please generate migrations files using the following commands:
 ### In this folder
-```migrate create -ext sql -dir ./migrations -seq $(REPLACE WITH MIGRATION FILE NAME)```
+```
+migrate create -ext sql -dir ./migrations -seq $(REPLACE WITH MIGRATION FILE NAME)
+```
 
 ### In /migrations
-```migrate create -ext sql -seq $(REPLACE WITH MIGRATION FILE NAME)```
+```
+migrate create -ext sql -seq $(REPLACE WITH MIGRATION FILE NAME)
+```
 
 example: migrate create -ext sql -dir ./migrations -seq create_users_table
 
