@@ -7,7 +7,9 @@ You never know who you are going to meet around the block :)
 
 # Local Development
 To start local development please run:
-```make start```
+```
+make start
+```
 This will start react and golang servers and also run migrations on a docker database container.
 
 ## Needed Dependencies

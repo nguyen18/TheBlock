@@ -1,7 +1,7 @@
 # Database Migrations
 Before running migrations make sure you have golang-migrate installed:
 
-### MAC OS
+#### MAC OS
 ```
 brew install golang-migrate
 ```
