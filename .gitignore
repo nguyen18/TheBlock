@@ -1,3 +1,7 @@
+### Ignore useless files created during local development and testing
+#
+#
+
 .DS_Store
-the-block@0.1.0
+the-block@*
 react-scripts
