@@ -6,19 +6,33 @@
 #
 #
 
-postgres:
-    docker run --name devdb -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:12-alpine
+### VARIABLES
+MIGRATIONS_PATH=brain/src/db/migrations
+POSTGRES_PORT=5432
+REACT_PORT=3000
+REACT_PID=$(lsof -ti :$(REACT_PORT))
+LOCAL_TESTDB_NAME=testdb
 
-createdb:
-    docker exec -it devdb createdb --username=root --owner=root the_block_local
+.PHONY: start-db clean-db create-db drop-db migrate-up migrate-down run-react stop-react
 
-dropdb:
-    docker exec -it devdb dropdb the_block_local
+start-db: create-db migrate-up
 
-migrateup:
-    migrate -path db/migration -database "postgresql://root:secret@localhost:5432/the_block_local?sslmode=disable" -verbose up
+clean-db: migrate-down drop-db
 
-migratedown:
-    migrate -path db/migration -database "postgresql://root:secret@localhost:5432/the_block_local?sslmode=disable" -verbose down
+create-db:
+	docker-compose up -d
 
-.PHONY: postgres createdb dropdb migrateup migratedown
+drop-db:
+	docker-compose down
+
+migrate-up:
+	migrate -path $(MIGRATIONS_PATH) -database "postgresql://root:secret@localhost:$(POSTGRES_PORT)/$(LOCAL_TESTDB_NAME)?sslmode=disable" -verbose up
+
+migrate-down:
+	migrate -path $(MIGRATIONS_PATH) -database "postgresql://root:secret@localhost:$(POSTGRES_PORT)/$(LOCAL_TESTDB_NAME)?sslmode=disable" -verbose down
+
+run-react:
+	$(shell cd ./react_app/the-block && npm start)
+
+stop-react:
+	$(shell cd ./react_app/the-block && kill $(REACT_PID))
