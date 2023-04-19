@@ -1,0 +1,172 @@
+/* #AspectWrapper {
+  border: 1px solid blue;
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
+  position: relative;
+}
+*/
+
+
+.AspectWrapper {
+  border: 20px solid #262d7b;
+  min-width:90%;
+  height:90%;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 1000px;
+} 
+
+
+.container {
+  display:grid;
+  /* border: 2px solid white; */
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height:-25;
+  padding: auto;
+  min-height: 500px !important;
+  font-family:sans-serif;
+
+}
+/* .Content {
+
+} */
+
+#Welcome {
+  color: #fab568;
+  font-size: 3vw;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.aligned {
+  align-self: center;
+  margin: 0 auto;
+}
+
+
+#LandingLogo {
+  margin: 10px;
+  /* border: 2px solid white; */
+  box-sizing: border-box;
+  width: 35vw;
+}
+
+#EnterButton {
+  background-color: #4b4d6a;
+  color: white;
+  box-shadow: -6px 6px 2px #1f1e31;
+  margin: 10px;
+  border: none;
+  border-radius: 50px;
+  height: 5vh;
+  width: 15vw;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  font-size: 3vh;
+  font-weight: bold;
+  box-shadow: -20px 20px #1f1e31;
+  margin-top: 20px;
+}
+
+#EnterButton:active {
+  background-color: #4b4d6a;
+  box-shadow: 0 5px #1f1e31;
+  transform: translateY(4px);
+  outline: none;
+}
+
+.blocktext {
+  position: relative;
+}
+
+#top-left {
+  position: absolute;
+  color: white;
+  top: 0;
+  left: 0;
+  font-size: 6vw;
+  text-shadow: -40px 30px #2331b5;
+  font-weight: bold;
+}
+
+#bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 6vw;
+  text-shadow: -40px 30px #2331b5;
+  color: white;
+  font-weight: bold;
+
+
+
+}
+
+/** .App {
+  color: white;
+  border: 1px solid #2331B5;
+  width: 300px;
+  height: 300px;
+}
+.AspectWrapper {
+  border: 1px solid #2331B5;
+  display: inline-block; /* shrink to fit */
+ /* width: 99%;           /* whatever width you like */
+ /* position: relative;    /* so .content can use position: absolute */
+/*}
+.AspectWrapper::after {
+  border: 1px solid #2331B5;
+  padding-top: 56.25%; /* percentage of containing block _width_ */
+ /* display: block;
+  content: '';
+}
+.Content {
+  position: absolute;
+  top: 0; bottom: 0; right: 0; left: 0;  /* follow the parent's edges */
+/*}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  border-color: #2331B5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */

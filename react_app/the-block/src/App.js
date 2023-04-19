@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {Component} from "react";
 import Header from './components/header/header';
 import ChatHistory from "./components/chat_history/chat_history";
@@ -32,6 +33,16 @@ class App extends Component {
       </div>
     )
   }
+=======
+import React from 'react';
+import './app.css'
+import { Routepusher } from './pages/routes';
+
+function App() {
+    return (
+        <Routepusher></Routepusher>
+    )
+>>>>>>> main
 }
 
 export default App;

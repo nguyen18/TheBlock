@@ -1,10 +1,24 @@
 version: '3.4'
 
 services:
-  theblock:
+  golang-server:
     image: theblock
     build:
       context: .
       dockerfile: ./Dockerfile
     ports:
       - 8000:8000
+
+  testdb:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: testdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - theblock-datadb-local:/var/lib/postgresql/data
+
+volumes:
+  theblock-datadb-local:
