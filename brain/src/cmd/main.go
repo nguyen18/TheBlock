@@ -4,13 +4,13 @@ import (
 	"log"
 	"net"
 
-	"google.golang.org/grpc"
+	grpc "google.golang.org/grpc"
 )
 
 type server struct{}
 
 func main() {
-	lis, err := net.Listen("tcp", ":50051")
+	lis, err := net.Listen("tcp", ":8000")
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
@@ -18,7 +18,7 @@ func main() {
 	s := grpc.NewServer()
 
 	// Register the server with gRPC
-	RegisterGreeterServer(s, &server{})
+	//s.RegisterService()
 
 	log.Println("Starting gRPC server...")
 	if err := s.Serve(lis); err != nil {
