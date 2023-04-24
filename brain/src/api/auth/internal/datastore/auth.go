@@ -4,15 +4,17 @@ import (
 	"context"
 	"database/sql"
 	"errors"
+
+	_ "github.com/lib/pq"
 )
 
 type authDatastore struct {
 	db *sql.DB
 }
 
-// NewAuthDatastore returns a new instance of the MySQL implementation of Datastore.
+// NewAuthDatastore returns a new instance of the Postgres implementation of Datastore.
 func NewAuthDatastore(dsn string) (*authDatastore, error) {
-	db, err := sql.Open("mysql", dsn)
+	db, err := sql.Open("postgres", dsn)
 	if err != nil {
 		return nil, err
 	}
@@ -21,7 +23,7 @@ func NewAuthDatastore(dsn string) (*authDatastore, error) {
 }
 
 // CreateUser creates a new user in the database.
-func (d *authDatastore) CreateUser(ctx context.Context, email string, password string) error {
+func (d *authDatastore) CreateUser(ctx context.Context, uuid string, email string, password []byte) error {
 	// Insert the user into the database.
 	res, err := d.db.ExecContext(ctx, "INSERT INTO users (email, password) VALUES (?, ?)", email, password)
 	if err != nil {
@@ -41,7 +43,7 @@ func (d *authDatastore) CreateUser(ctx context.Context, email string, password s
 }
 
 // GetUser retrieves a user from the database.
-func (d *authDatastore) GetUser(ctx context.Context, email string) (string, error) {
+func (d *authDatastore) GetHashedPasswordByEmail(ctx context.Context, email string) (string, error) {
 	var password string
 
 	// Get the user from the database.
