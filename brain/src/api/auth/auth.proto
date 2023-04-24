@@ -14,7 +14,6 @@ message LoginRequest {
     string password = 2;
 }
 
-
 message LoginResponse {
     bool success = 1;
 }

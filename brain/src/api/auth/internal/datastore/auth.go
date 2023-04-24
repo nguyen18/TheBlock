@@ -25,7 +25,7 @@ func NewAuthDatastore(dsn string) (*authDatastore, error) {
 // CreateUser creates a new user in the database.
 func (d *authDatastore) CreateUser(ctx context.Context, uuid string, email string, password []byte) error {
 	// Insert the user into the database.
-	res, err := d.db.ExecContext(ctx, "INSERT INTO users (email, password) VALUES (?, ?)", email, password)
+	res, err := d.db.ExecContext(ctx, "INSERT INTO users (uuid, email, password) VALUES (?, ?, ?)", uuid, email, password)
 	if err != nil {
 		return err
 	}
@@ -43,7 +43,7 @@ func (d *authDatastore) CreateUser(ctx context.Context, uuid string, email strin
 }
 
 // GetUser retrieves a user from the database.
-func (d *authDatastore) GetHashedPasswordByEmail(ctx context.Context, email string) (string, error) {
+func (d *authDatastore) GetUserPasswordByEmail(ctx context.Context, email string) (string, error) {
 	var password string
 
 	// Get the user from the database.
