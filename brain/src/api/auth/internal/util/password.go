@@ -1,4 +1,4 @@
-package auth
+package authUtil
 
 import "golang.org/x/crypto/bcrypt"
 
