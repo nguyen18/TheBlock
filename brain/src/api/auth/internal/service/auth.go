@@ -37,7 +37,7 @@ func (s *AuthServer) Login(ctx context.Context, req *authpb.LoginRequest) (*auth
 			Success: false,
 		}
 
-		return resp, nil
+		return resp, errors.New("passwords don't match")
 	}
 
 	// if it matches, return user and success

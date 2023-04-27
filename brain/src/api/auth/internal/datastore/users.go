@@ -101,7 +101,7 @@ func (d *authDatastore) GetUserPasswordByEmail(ctx context.Context, email string
 
 	// Get the user password from the database.
 	err := d.db.QueryRowContext(ctx, "SELECT password FROM users WHERE email = ?", email).Scan(&password)
-	if err != nil {
+	if err == sql.ErrNoRows || err != nil {
 		return nil, err
 	}
 
