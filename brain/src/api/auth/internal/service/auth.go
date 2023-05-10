@@ -58,6 +58,7 @@ func (s *AuthServer) Login(ctx context.Context, req *authpb.LoginRequest) (*auth
 	return resp, nil
 }
 
+// Signup registers a new user in database and ensures they don't already exist
 func (s *AuthServer) Signup(ctx context.Context, req *authpb.SignupRequest) (*authpb.SignupResponse, error) {
 	// check if user exists
 	exists, err := s.store.UserExists(ctx, req.GetEmail())

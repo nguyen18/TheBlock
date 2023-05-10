@@ -15,6 +15,7 @@ type Claims struct {
 	jwt.StandardClaims
 }
 
+// GenerateJWTToken generates a new session token for user
 func GenerateJWTToken(email string) (string, error) {
 	// Create JWT token
 	expirationTime := time.Now().Add(72 * time.Hour)

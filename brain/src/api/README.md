@@ -9,3 +9,17 @@ To create proto files to represent request and response messages please follow t
 - define your endpoints under an internal folder
 
 Please feel free to take a look at services already made
+
+## Test Suite
+To run go unit tests under brain:
+```
+go test ./...
+```
+### Generating Mocks
+To generate mocks for unit testing, please run:
+```
+mockgen -destination=mock_destination.go -package=mockpackage [directory] [package interface you want to mock]
+```
+example: `mockgen -destination=mocks/mock_authdatastore.go -package=mockauthdatastore TheBlock/src/api/auth/internal/datastore AuthDatastore`
+
+This must be updated when datastore interface is updated.
