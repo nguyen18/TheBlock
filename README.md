@@ -31,9 +31,3 @@ Please ensure you have the following installed before starting local development
 Install using `npm install -save [package name]` in ./react-app/the-block
 - styled-components
 - react-router-dom
-
-### golang packages
-Install using `go get -u [package]` or `brew install [package]`. Make sure to check official documentation for correct commands.
-- grpc
-- protobuf
-- protoc-gen-go
