@@ -5,6 +5,7 @@ import (
 	"net"
 
 	grpc "google.golang.org/grpc"
+	reflect "google.golang.org/grpc/reflection"
 )
 
 type server struct{}
@@ -15,10 +16,9 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 
-	s := grpc.NewServer()
+	s := RegisterService(grpc.NewServer())
 
-	// Register the server with gRPC
-	//s.RegisterService()
+	reflect.Register(s)
 
 	log.Println("Starting gRPC server...")
 	if err := s.Serve(lis); err != nil {
