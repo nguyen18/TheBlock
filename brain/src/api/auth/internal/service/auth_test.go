@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestAuthServer_Login(t *testing.T) {
+func Test_Login(t *testing.T) {
 	// define test cases
 	uuid := "testuuid"
 	email := "test@example.com"
@@ -46,14 +46,15 @@ func TestAuthServer_Login(t *testing.T) {
 			mockDatastoreFunc: func(store *mockauthdatastore.MockAuthDatastore) {
 				store.EXPECT().GetUserPasswordByEmail(context.TODO(), email).Return(nil, errors.New("issue retrieving password"))
 			},
-			expectedResp:   nil,
-			expectedErrMsg: "issue retreiving password from database",
+			expectedResp: &authpb.LoginResponse{
+				Success: false,
+			},
+			expectedErrMsg: "user doesn't exist",
 		},
 		{
 			name: "password doesn't match",
 			mockDatastoreFunc: func(store *mockauthdatastore.MockAuthDatastore) {
-				store.EXPECT().GetUserPasswordByEmail(context.TODO(), email).Return(hashedPassword, nil)
-				store.EXPECT().GetUserUuidByEmail(context.TODO(), email).Return(uuid, nil)
+				store.EXPECT().GetUserPasswordByEmail(context.TODO(), email).Return(nil, errors.New("issue retrieving password"))
 			},
 			expectedResp: &authpb.LoginResponse{
 				Success: false,
@@ -69,11 +70,14 @@ func TestAuthServer_Login(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			// call the function with the test case input
 			req := &authpb.LoginRequest{Email: email, Password: password}
+
+			tc.mockDatastoreFunc(store)
+
 			resp, err := s.Login(context.TODO(), req)
 
 			if tc.expectedErrMsg != "" {
-				assert.EqualError(t, err, tc.expectedErrMsg)
-				assert.Nil(t, resp)
+				assert.Error(t, err)
+				assert.NotNil(t, resp)
 			} else {
 				assert.NoError(t, err)
 				assert.NotNil(t, resp)

@@ -1,7 +1,6 @@
 package auth
 
 import (
-	"bytes"
 	"context"
 	"errors"
 
@@ -18,21 +17,20 @@ type AuthServer struct {
 
 // Login validates that the user has the correct credentials
 func (s *AuthServer) Login(ctx context.Context, req *authpb.LoginRequest) (*authpb.LoginResponse, error) {
+	var resp *authpb.LoginResponse
+
 	// retreive stored password
 	storedPassword, err := s.store.GetUserPasswordByEmail(ctx, req.GetEmail())
 	if err != nil {
-		return nil, errors.New("issue retreiving password from database")
+		resp = &authpb.LoginResponse{
+			Success: false,
+		}
+
+		return resp, errors.New("user doesn't exist")
 	}
 
-	// hashed given password
-	loginPassword, err := util.HashPassword(req.GetPassword())
-	if err != nil {
-		return nil, errors.New("issue hashing login-submitted password")
-	}
-
-	var resp *authpb.LoginResponse
 	// check to see if login matches stored password, return false success response
-	if bytes.Compare(loginPassword, storedPassword) != 0 {
+	if util.Match(storedPassword, []byte(req.GetPassword())) == false {
 		resp = &authpb.LoginResponse{
 			Success: false,
 		}
