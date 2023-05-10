@@ -65,7 +65,7 @@ func (d *authDatastore) UserExists(ctx context.Context, email string) (bool, err
 	return true, nil
 }
 
-// GetUserUuidByEmail creates a new user in the database.
+// GetUserUuidByEmail retreives the user uuid by their email in db
 func (d *authDatastore) GetUserUuidByEmail(ctx context.Context, email string) (string, error) {
 	// Get the user from the database.
 	var uuid string
@@ -82,7 +82,7 @@ func (d *authDatastore) GetUserUuidByEmail(ctx context.Context, email string) (s
 	return uuid, nil
 }
 
-// GetUserIdByUuid creates a new user in the database.
+// GetUserIdByUuid retreives user id by their uuid from db
 func (d *authDatastore) GetUserIdByUuid(ctx context.Context, uuid string) (int64, error) {
 	// Get the user from the database.
 	var userid int64
@@ -95,7 +95,7 @@ func (d *authDatastore) GetUserIdByUuid(ctx context.Context, uuid string) (int64
 	return userid, nil
 }
 
-// GetUser retrieves a user from the database.
+// GetUser retrieves a user password by their email in db
 func (d *authDatastore) GetUserPasswordByEmail(ctx context.Context, email string) ([]byte, error) {
 	var password []byte
 
