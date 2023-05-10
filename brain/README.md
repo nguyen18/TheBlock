@@ -35,3 +35,5 @@ Install using `go get -u [package]` or `brew install [package]`. Make sure to ch
 - assert
 
 Run `go mod tidy` under brain to clean up packages.
+
+## File Structure
