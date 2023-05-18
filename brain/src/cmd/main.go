@@ -23,7 +23,7 @@ func main() {
 	// s := grpc.NewServer()
 	// authpb.RegisterAuthServiceServer(s, auth.NewAuthServiceServer())
 
-	s := register.RegisterService(grpc.NewServer())
+	s := register.RegisterTestServices(grpc.NewServer())
 
 	reflect.Register(s)
 
