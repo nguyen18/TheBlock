@@ -25,7 +25,7 @@ func NewAuthDatastore(dsn string) (*authDatastore, error) {
 // CreateUser creates a new user in the database.
 func (d *authDatastore) CreateUser(ctx context.Context, uuid string, email string, password []byte) (string, error) {
 	// Insert the user into the database.
-	res, err := d.db.ExecContext(ctx, "INSERT INTO users (uuid, email, password) VALUES (?, ?, ?)", uuid, email, password)
+	res, err := d.db.ExecContext(ctx, "INSERT INTO users (uuid, email, password) VALUES ($1, $2, $3)", uuid, email, password)
 	if err != nil {
 		return "", err
 	}
@@ -52,7 +52,7 @@ func (d *authDatastore) CreateUser(ctx context.Context, uuid string, email strin
 func (d *authDatastore) UserExists(ctx context.Context, email string) (bool, error) {
 	var id int64
 	// Get the user from the database.
-	err := d.db.QueryRowContext(ctx, "SELECT id FROM users WHERE email = ?", email).Scan(&id)
+	err := d.db.QueryRowContext(ctx, "SELECT id FROM users WHERE email = $1", email).Scan(&id)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			// If there is no user with the given email, return false
@@ -69,7 +69,7 @@ func (d *authDatastore) UserExists(ctx context.Context, email string) (bool, err
 func (d *authDatastore) GetUserUuidByEmail(ctx context.Context, email string) (string, error) {
 	// Get the user from the database.
 	var uuid string
-	err := d.db.QueryRowContext(ctx, "SELECT uuid FROM users WHERE email = ?", email).Scan(&uuid)
+	err := d.db.QueryRowContext(ctx, "SELECT uuid FROM users WHERE email = $1", email).Scan(&uuid)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			// If there is no user with the given email, return false
@@ -86,7 +86,7 @@ func (d *authDatastore) GetUserUuidByEmail(ctx context.Context, email string) (s
 func (d *authDatastore) GetUserIdByUuid(ctx context.Context, uuid string) (int64, error) {
 	// Get the user from the database.
 	var userid int64
-	err := d.db.QueryRowContext(ctx, "SELECT id FROM users WHERE uuid = ?", uuid).Scan(&userid)
+	err := d.db.QueryRowContext(ctx, "SELECT id FROM users WHERE uuid = $1", uuid).Scan(&userid)
 	if err != nil {
 		return 0, err
 	}
@@ -100,7 +100,7 @@ func (d *authDatastore) GetUserPasswordByEmail(ctx context.Context, email string
 	var password []byte
 
 	// Get the user password from the database.
-	err := d.db.QueryRowContext(ctx, "SELECT password FROM users WHERE email = ?", email).Scan(&password)
+	err := d.db.QueryRowContext(ctx, "SELECT password FROM users WHERE email = $1", email).Scan(&password)
 	if err == sql.ErrNoRows || err != nil {
 		return nil, err
 	}

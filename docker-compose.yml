@@ -1,13 +1,13 @@
 version: '3.4'
 
 services:
-  golang-server:
-    image: theblock
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    ports:
-      - 8000:8000
+  # golang-server:
+  #   image: theblock
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #   ports:
+  #     - 8000:8000
 
   testdb:
     image: postgres:latest

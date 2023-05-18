@@ -12,11 +12,11 @@ func HashPassword(password string) ([]byte, error) {
 }
 
 // Match compares login password to user's stored password to determine login
-func Match(storedPassword []byte, loginPassword []byte) bool {
+func Match(storedPassword []byte, loginPassword []byte) (bool, error) {
 	err := bcrypt.CompareHashAndPassword(storedPassword, loginPassword)
 	if err != nil {
-		return false
+		return false, err
 	}
 
-	return true
+	return true, nil
 }
