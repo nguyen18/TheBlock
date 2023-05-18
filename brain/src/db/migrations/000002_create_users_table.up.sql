@@ -1,6 +1,6 @@
 /** add table users which store user's uuid, email, password and email verification **/
 
-SET TIMEZONE='PST';
+BEGIN; 
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -11,3 +11,5 @@ CREATE TABLE users (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+COMMIT;
