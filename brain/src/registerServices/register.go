@@ -1,7 +1,7 @@
 package registerservices
 
 import (
-	"fmt"
+	"log"
 
 	grpc "google.golang.org/grpc"
 
@@ -13,7 +13,7 @@ import (
 func RegisterService(server *grpc.Server) *grpc.Server {
 	authService, err := auth.NewAuthServiceServer("postgresql://root:secret@localhost:5432/testdb?sslmode=disable")
 	if err != nil {
-		fmt.Println(err.Error())
+		log.Printf(err.Error())
 	}
 	server.RegisterService(&authpb.AuthService_ServiceDesc, authService)
 
