@@ -3,6 +3,7 @@ package auth
 import (
 	"context"
 	"errors"
+	"fmt"
 	"testing"
 
 	authpb "TheBlock/src/api/auth/authpb"
@@ -15,11 +16,16 @@ import (
 )
 
 func Test_signup(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	defer ctrl.Finish()
+	mockHasher := mds.NewMockBCryptHasher(ctrl)
+
 	//define test cases
 	uuid := "testuuid"
 	email := "test@example.com"
 	password := "testpassword"
-	hashedPassword, _ := util.HashPassword(password)
+	hashedPassword, _ := mockHasher.HashPassword(password)
+	fmt.Println(hashedPassword)
 	token := "jwt"
 
 	tests := []struct {

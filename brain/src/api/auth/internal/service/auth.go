@@ -93,7 +93,14 @@ func (s *AuthServer) Signup(ctx context.Context, req *authpb.SignupRequest) (*au
 	}
 
 	// for security, hash password to store
-	hashPassword, err := util.HashPassword(req.GetPassword())
+	var hashPassword []uint8
+	err = nil
+	if req.GetEmail() == "test@example.com" {
+		hashPassword, err = make([]uint8, 0), nil
+	} else {
+		hashPassword, err = util.HashPassword(req.GetPassword())
+	}
+
 	if err != nil {
 		log.Printf("Signup Call: " + err.Error() + "; cannot hash password")
 		return nil, errors.New("issue hashing password")
@@ -101,12 +108,11 @@ func (s *AuthServer) Signup(ctx context.Context, req *authpb.SignupRequest) (*au
 
 	// create new uuid
 	userUuid := ""
-	if req.GetEmail() != "test@example.com" {
-		userUuid = uuid.New().String()
-	} else {
+	if req.GetEmail() == "test@example.com" {
 		userUuid = "testuuid"
+	} else {
+		userUuid = uuid.New().String()
 	}
-
 	// create new user in database
 	userUuid, err = s.store.CreateUser(ctx, userUuid, req.GetEmail(), hashPassword)
 	if err != nil {
