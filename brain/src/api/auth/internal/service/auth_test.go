@@ -49,7 +49,6 @@ func Test_signup(t *testing.T) {
 	for _, tc := range tests {
 		t.Run(tc.name, func(t *testing.T) {
 			req := &authpb.SignupRequest{Email: email, Password: password}
-
 			tc.mockDatastoreFunc(store)
 
 			resp, err := s.Signup(context.TODO(), req)

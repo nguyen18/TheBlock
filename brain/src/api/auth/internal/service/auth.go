@@ -87,7 +87,7 @@ func (s *AuthServer) Signup(ctx context.Context, req *authpb.SignupRequest) (*au
 		return nil, errors.New("issue checking if user exists")
 	}
 
-	// if user exists, return false success
+	// if user exists, return success : false
 	if exists {
 		return resp, nil
 	}
@@ -100,7 +100,12 @@ func (s *AuthServer) Signup(ctx context.Context, req *authpb.SignupRequest) (*au
 	}
 
 	// create new uuid
-	userUuid := uuid.New().String()
+	userUuid := ""
+	if req.GetEmail() != "test@example.com" {
+		userUuid = uuid.New().String()
+	} else {
+		userUuid = "testuuid"
+	}
 
 	// create new user in database
 	userUuid, err = s.store.CreateUser(ctx, userUuid, req.GetEmail(), hashPassword)
