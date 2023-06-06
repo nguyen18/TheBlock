@@ -47,6 +47,16 @@ func Test_signup(t *testing.T) {
 			},
 			expectedErrMsg: "",
 		},
+		{
+			name: "user already exists",
+			mockDatastoreFunc: func(store *mockauthdatastore.MockAuthDatastore) {
+				store.EXPECT().UserExists(context.TODO(), email).Return(true, errors.New("user exists"))
+			},
+			expectedResp: &authpb.SignupResponse{
+				Success: false,
+			},
+			expectedErrMsg: "user already exists",
+		},
 	}
 
 	store := mds.NewMockAuthDatastore(gomock.NewController(t))
@@ -69,6 +79,8 @@ func Test_signup(t *testing.T) {
 				if tc.expectedResp.Uuid != "" {
 					assert.NotEmpty(t, resp.Uuid)
 				}
+			} else {
+				assert.Error(t, err)
 			}
 		})
 	}
